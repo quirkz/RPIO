@@ -70,7 +70,7 @@ setup(void)
     int mem_fd;
     uint8_t *gpio_mem;
 
-    if ((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0)
+    if ((mem_fd = open("/dev/gpiomem", O_RDWR|O_SYNC) ) < 0)
         return SETUP_DEVMEM_FAIL;
 
     if ((gpio_mem = malloc(BLOCK_SIZE + (PAGE_SIZE-1))) == NULL)
